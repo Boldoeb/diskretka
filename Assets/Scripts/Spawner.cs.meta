@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: ca941bf57801daa47a106d05e0e47c0b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - father: {instanceID: 0}
+  - spawnPos: {instanceID: 0}
+  - Passanger1: {fileID: 5527364204654150459, guid: cfa9c88aee6698e4b99a9b9846bfa67c, type: 3}
+  - Passanger2: {fileID: 4734753543335853483, guid: 7ecf802374db4dc4abb4f1baef4436a6, type: 3}
+  - Passanger3: {fileID: 1970855861210603697, guid: 8d760dd6771742a4981c102c55cb1067, type: 3}
+  - Passanger4: {fileID: 8463204300626099662, guid: b59741b56da3a0e4891472c1e1934f23, type: 3}
+  - Passanger5: {fileID: 5930307062376523927, guid: cbb737141524a9b4dae8360cfbf244bb, type: 3}
+  - Passanger6: {fileID: 3119437665107817642, guid: e1a9b1c2fdbbcc144ae150a2b7c4a714, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
