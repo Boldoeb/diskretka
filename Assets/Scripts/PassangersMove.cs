@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class PassangersMove : MonoBehaviour
 {
-    public Transform TargetPos;
+    public GameObject thisPass;
 
-    public void Start()
-    {
-        TargetPos.position = new Vector3 (transform.parent.position.x - 5, transform.parent.position.y, transform.parent.position.z + 3);
-    }
 
-    private void FixedUpdate()
+
+    private void Start()
     {
-        transform.position = Vector3.Lerp(transform.position, TargetPos.position, 5);
+        thisPass.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 3);
     }
 
 

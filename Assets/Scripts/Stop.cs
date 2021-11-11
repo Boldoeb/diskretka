@@ -7,15 +7,16 @@ public class Stop : MonoBehaviour
     public GameObject bus;
     public int direct;
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
+        other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         bus.GetComponent<Rigidbody>().velocity = new Vector3 (0, 0, 0);
         StartCoroutine(ExecuteAfterTime());
     }
 
     IEnumerator ExecuteAfterTime()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(500);
 
         switch (direct) {
             case 0:
