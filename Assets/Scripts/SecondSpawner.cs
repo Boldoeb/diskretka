@@ -8,12 +8,12 @@ public class SecondSpawner : MonoBehaviour
     public Transform spawnPos;
     [SerializeField] GameObject Passanger0;
 
-
     private void Update()
     {
         if (spawn == true) StartCoroutine(Spawn());
     }
 
+    
     IEnumerator Spawn()
     {
         spawn = false;
@@ -21,6 +21,7 @@ public class SecondSpawner : MonoBehaviour
         pos = new Vector3(spawnPos.position.x, 1.1f, spawnPos.position.z);
         GameObject newPassanger1 = Instantiate(Passanger0, pos, Quaternion.identity);
         yield return new WaitForSeconds(1.5f);
+
         spawn = true;
     }
 }
