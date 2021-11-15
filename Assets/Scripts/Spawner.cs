@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Transform spawnPos;
-    private int[,] table = new int[5, 5];
+    public int[,] table = new int[5, 5];
     [SerializeField] GameObject Passanger1;
     [SerializeField] GameObject Passanger2;
     [SerializeField] GameObject Passanger3;
@@ -13,9 +13,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject Passanger5;
     private void Start()
     {
-    //    for (int i = 0; i < 5; i++)
-    //        for (int j = 0; j < 5; j++)
-    //            table[i, j] = Random.Range(1, 6);
+    
     }
 
     private void OnTriggerEnter()
