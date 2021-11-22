@@ -11,21 +11,20 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject Passanger3;
     [SerializeField] GameObject Passanger4;
     [SerializeField] GameObject Passanger5;
+    public GlobalObserver observer;
+    public int busNum = 0, stationNum;
     private void Start()
     {
-    
     }
 
     private void OnTriggerEnter()
     {
-            StartCoroutine(Spawn());
+        if (observer.buses[busNum, stationNum] > 0)
+            StartCoroutine(Spawn(observer.buses[busNum, stationNum],stationNum));
     }
-
-    IEnumerator Spawn()
+    IEnumerator Spawn(int i,int n)
     {
-        int n;
-        for (int i = 0; i < 10; i++) {
-            n = Random.Range(1, 6);
+        for (int i1 = i; i ==0; i--) {
             Vector3 pos = spawnPos.position;
             pos = new Vector3(pos.x - 3, 1.1f, pos.z - 3);
             switch (n)

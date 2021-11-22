@@ -16,7 +16,7 @@ public class SecondSpawner : MonoBehaviour
         switch (stationNum)
         {
             case 1:
-                stationNum = 19;
+                stationNum = 21;
                 break;
             case 2:
                 stationNum = 12;

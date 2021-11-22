@@ -12,7 +12,7 @@ public class ColorChanger : MonoBehaviour
     [SerializeField] GameObject Passanger3;
     [SerializeField] GameObject Passanger4;
     [SerializeField] GameObject Passanger5;
-    private int[,] table = { { 5, 4, 3, 4, 3 }, { 0, 3, 2, 4, 3 }, { 0, 0, 4, 5, 6 }, { 0, 0, 0, 3, 4 }, { 0, 0, 0, 0, 3 } };
+    private int[,] table = { { 5, 4, 3, 5, 4 }, { 0, 3, 2, 4, 3 }, { 0, 0, 4, 5, 6 }, { 0, 0, 0, 3, 4 }, { 0, 0, 0, 0, 3 } };
     public int stationNum;
     private int i = 0;
 
