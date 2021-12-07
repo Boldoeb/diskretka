@@ -11,7 +11,26 @@ public class BusEnter : MonoBehaviour
         if ((other.gameObject.tag == "Passenger2") || (other.gameObject.tag == "Passenger1") || (other.gameObject.tag == "Passenger3") || (other.gameObject.tag == "Passenger4") || (other.gameObject.tag == "Passenger5"))
         { 
         Destroy(other.gameObject);
-        observer.buses[0, 4]++; }
+            switch (other.gameObject.tag)
+            {
+                case "Passenger1":
+                    observer.buses[gameObject.GetComponent<BusMoving>().num, 0]++;
+                    break;
+                case "Passenger2":
+                    observer.buses[gameObject.GetComponent<BusMoving>().num, 1]++;
+                    break;
+                case "Passenger3":
+                    observer.buses[gameObject.GetComponent<BusMoving>().num, 2]++;
+                    break;
+                case "Passenger4":
+                    observer.buses[gameObject.GetComponent<BusMoving>().num, 3]++;
+                    break;
+                case "Passenger5":
+                    observer.buses[gameObject.GetComponent<BusMoving>().num, 4]++;
+                    break;
+
+            }
+         }
     }
 
 }

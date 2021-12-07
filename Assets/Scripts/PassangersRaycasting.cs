@@ -12,7 +12,7 @@ public class PassangersRaycasting : MonoBehaviour
         Ray ray = new Ray(transform.position, transform.forward);
         if (Physics.Raycast(ray, rayDistance))
         {
-            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+           gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         }
     }
 }

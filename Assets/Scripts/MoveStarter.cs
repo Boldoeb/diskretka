@@ -7,51 +7,63 @@ public class MoveStarter : MonoBehaviour
     public int station;
     public int passanger;
     private int allowedPassanger = 4;
+    private int busnum = 0;
 
     public GlobalObserver observer;
-    private int i = 0; 
-    private void OnTriggerEnter  (Collider other)
+
+    private void Start()
     {
-        if (observer.obstable[0,passanger] == 0)
+        passanger--;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        observer.numpass[station]--;
+    }
+    private void OnTriggerExit()
+    {
+        if (observer.obstable[station, passanger] == 0)
         {
             allowedPassanger--;
+        };
+        if(observer.buses[busnum,passanger] == 5)
+        {
+            busnum++; 
         }
-        Debug.Log(observer.buses[i, passanger]);
+    }
+    private void OnTriggerStay  (Collider other)
+    {
+        if (observer.isBusStation[station] == true) { 
+        Debug.Log(observer.buses[busnum, passanger]);
         Debug.Log(observer.obstable[0, passanger]);
         other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-        if ((observer.buses[i, passanger] < 5) & (observer.obstable[0,passanger]!= 0) & (passanger == allowedPassanger))
-        {
-
-            switch (passanger)
+            if ((observer.buses[busnum, passanger] < 5) & (observer.obstable[station, passanger] != 0) & (passanger == allowedPassanger))
             {
-                case 0:
-                    other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-3, 0, 3);
-                    observer.obstable[passanger, station]--;
-                    break;
-                case 1:
-                    other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-1.5f, 0, 3);
-                    observer.obstable[passanger, station]--;
-                    break;
-                case 2:
-                    other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 3);
-                    observer.obstable[passanger, station]--;
-                    break;
-                case 3:
-                    other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(1.5f, 0, 3);
-                    observer.obstable[passanger, station]--;
-                    break;
-                case 4:
-                    other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(3, 0, 3);
-                    observer.obstable[passanger, station]--;
-                    break;
+
+                switch (passanger)
+                {
+                    case 0:
+                        other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-3, 0, 3);
+                        observer.obstable[passanger, station]--;
+                        break;
+                    case 1:
+                        other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(-1.5f, 0, 3);
+                        observer.obstable[passanger, station]--;
+                        break;
+                    case 2:
+                        other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 3);
+                        observer.obstable[passanger, station]--;
+                        break;
+                    case 3:
+                        other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(1.5f, 0, 3);
+                        observer.obstable[passanger, station]--;
+                        break;
+                    case 4:
+                        other.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(3, 0, 3);
+                        observer.obstable[passanger, station]--;
+                        break;
+                }
+                Debug.Log("Moving");
             }
-            Debug.Log("Moving");
         }
     }
-
-    private void OnCollisionExit()
-    {
-        
-    }
-
 }

@@ -12,29 +12,30 @@ public class ColorChanger : MonoBehaviour
     [SerializeField] GameObject Passanger3;
     [SerializeField] GameObject Passanger4;
     [SerializeField] GameObject Passanger5;
-    private int[,] table = { { 5, 4, 3, 5, 4 }, { 0, 3, 2, 4, 3 }, { 0, 0, 4, 5, 6 }, { 0, 0, 0, 3, 4 }, { 0, 0, 0, 0, 3 } };
+    private int[,] table = { { 5, 4, 3, 4, 5 }, { 0, 3, 2, 4, 3 }, { 0, 0, 4, 5, 6 }, { 0, 0, 0, 3, 4 }, { 0, 0, 0, 0, 3 } };
     public int stationNum;
-    private int i = 0;
+    
 
     private void Start()
     {
         stationNum--;
-        //string[] lines = File.ReadAllLines("Pos.txt");
-        //int[,] num = new int[lines.Length, lines[0].Split(' ').Length];
-        //for (int i = 0; i < lines.Length; i++)
-        //{
-        //     string[] temp = lines[i].Split(' ');
-        //       for (int j = 0; j < temp.Length; j++)
-        //             num[i, j] = Convert.ToInt32(temp[j]);
-        //      }
+ 
     }
 
     IEnumerator Spawn()
     {
-        int n = Random.Range(1, 6);
+        int i = Random.Range(0, 5);
         Vector3 pos = spawnPos.position;
         pos = new Vector3(spawnPos.position.x, 1.1f, spawnPos.position.z + 0.8f);
-        while (table[stationNum, i] == 0) {  
+        if (i > 5)
+        {
+            i = 0;
+        }
+        while (table[stationNum, i] == 0) {
+            if (i > 4)
+            {
+                i = 0;
+            }
             i++;
            }
         switch (i+1)

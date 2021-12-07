@@ -119,7 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f07592b6bf441e4e8087b67c4d4e645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bus: {fileID: 7371891737432712175}
+  num: 0
+  observer: {fileID: 5738019972849680114, guid: b3777d3026b797541b165e5013f21ac1, type: 3}
 --- !u!65 &7371891737432712150
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -145,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de107ff6ce9b9cc468458c93543429f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  observer: {fileID: 0}
 --- !u!1001 &7985803256883959781
 PrefabInstance:
   m_ObjectHideFlags: 0

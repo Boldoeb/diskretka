@@ -3,7 +3,13 @@ guid: 83188936f2a31aa45ad4dc954d9c7a42
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - observer: {instanceID: 0}
+  - Passanger1: {fileID: 5527364204654150459, guid: cfa9c88aee6698e4b99a9b9846bfa67c, type: 3}
+  - Passanger2: {fileID: 4734753543335853483, guid: 7ecf802374db4dc4abb4f1baef4436a6, type: 3}
+  - Passanger3: {fileID: 1970855861210603697, guid: 8d760dd6771742a4981c102c55cb1067, type: 3}
+  - Passanger4: {fileID: 5930307062376523927, guid: cbb737141524a9b4dae8360cfbf244bb, type: 3}
+  - Passanger5: {fileID: 7239049160559037056, guid: b295b34ccf2e05c42abcbe66fc03565e, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
